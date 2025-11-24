@@ -1,0 +1,66 @@
+<section>
+  <form [formGroup]="carDataForm()" class="flex flex-col gap-4">
+    <div class="select-none flex flex-col gap-2" >
+      <label for="model" class="select-none ">Marca / modelo</label>
+      <input type="text" id="model" class="select-none input w-100" formControlName="model">
+    </div>
+
+    <div class="select-none flex flex-col gap-2">
+      <label for="noVin" class="select-none ">No. Vin</label>
+      <input type="text" id="noVin" class="select-none input w-100" formControlName="noVin">
+    </div>
+
+    <div class="select-none flex flex-col gap-2">
+      <label for="mileage" class="select-none">Kilometraje del vehiculo</label>
+      <input type="text" id="mileage" class="select-none input w-5/12" formControlName="mileage">
+    </div>
+
+    <div class="select-none flex flex-col gap-2">
+      <label for="alteredMileage" class="select-none">¿Kilometraje alterado?</label>
+
+      <div class="flex flex-row gap-40">
+        <div class="select-none flex flex-row items-center">
+          <input class="select-none radio radio-md radio-secondary" type="radio" id="isAlteredMileage" name="alteredMileage" [value]="true"  formControlName="alteredMileage">
+          <label for="isAlteredMileage" class="select-none">Si</label>
+        </div>
+
+        <div class="select-none flex flex-row items-center">
+          <input class="select-none radio radio-md radio-secondary" type="radio" id="nonAlteredMileage"  name="alteredMileage" [value]="false" formControlName="alteredMileage">
+          <label for="nonAlteredMileage" class="select-none">No</label>
+        </div>
+      </div>
+
+
+    </div>
+
+    <hr class="my-3">
+
+    <div class="select-none flex flex-wrap justify-between flex-1 gap-3">
+      <div class="select-none">
+        <input type="checkbox" id="cleanCarfax" formControlName="isCleanCarfaz" class="checkbox checkbox-md">
+        <label for="cleanCarfax">Clean Carfax</label>
+      </div>
+
+      <div class="select-none">
+        <input type="checkbox" id="isDealer" formControlName="isDealer" class="checkbox checkbox-md">
+        <label for="isDealer">Consecionario</label>
+      </div>
+
+      <div class="select-none">
+        <input type="checkbox" id="isRebuild" formControlName="isRebuild" class="checkbox checkbox-md">
+        <label for="isRebuild">Rebuild / Salvamento</label>
+      </div>
+    </div>
+
+
+    <div class="select-none flex flex-col gap-2">
+      <label for="cleanCarfax">Origen</label>
+      <select class="select" formControlName="origin">
+        <option disabled selected>Pick a color</option>
+        <option>Americano</option>
+        <option>Europeo</option>
+        <option>Asiatico</option>
+      </select>
+  </div>
+  </form>
+</section>

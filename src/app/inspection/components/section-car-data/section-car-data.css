@@ -1,0 +1,12 @@
+@reference "../../../../styles.css";
+
+
+:host {
+  display: block;
+}
+
+
+
+label{
+  @apply  font-bold text-gray-300;
+}

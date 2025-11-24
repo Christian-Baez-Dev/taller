@@ -1,0 +1,30 @@
+<section>
+  <table class="table table-xs bg-gray-100 border-collapse border-spacing-y-2 border-spacing-x-0">
+  <thead>
+    <tr class="select-none shadow-[0_2px_2px_-2px_rgba(0,0,0,0.1)]">
+      <th></th>
+      @for (column of data().columns; track $index) {
+      <th class="text-center bg-gray-">{{ column.label }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody class="">
+    @for (row of data().rows; track $index) {
+    <tr class="select-none w-full shadow-[0_2px_2px_-2px_rgba(0,0,0,0.1)]">
+      <td class="text-sm font-sans font-medium text-gray-700">{{ row.label }}</td>
+      @for (column of data().columns; track $index) {
+      <td class="text-center">
+        <input
+          type="checkbox"
+          class="checkbox checkbox-xs checkbox-secondary m-0 p-0"
+          [checked]="row.value === column.value"
+          (change)="selectValue(row, column.value)"
+        />
+      </td>
+      }
+    </tr>
+    }
+
+  </tbody>
+</table>
+</section>
